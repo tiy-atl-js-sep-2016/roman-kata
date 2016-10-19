@@ -2,7 +2,10 @@ function toRoman (number) {
   var result = "";
 
   while (number > 0) {
-    if (number >= 5) {
+    if (number >= 10) {
+      result += "X";
+      number -= 10;
+    } else if (number >= 5) {
       result += "V";
       number -= 5;
     } else if (number >= 1) {
@@ -26,5 +29,8 @@ console.assert(toRoman(7) === "VII",
                "Convert compound numbers");
 console.assert(toRoman(36) === "XXXVI",
                "Convert two digit numbers");
+console.assert(toRoman(4) === "IV",
+               "Can convert 4");
+
 
 export { toRoman };
